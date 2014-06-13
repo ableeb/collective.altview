@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="collective.altview">
+
+  <configlet
+      title="Alternate view settings"
+      action_id="collective.altview.settings"
+      appId="collective.altview"
+      remove="True">
+  </configlet>
+
+</object>

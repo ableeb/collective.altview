@@ -1,0 +1,11 @@
+<registry>
+  <record interface="collective.altview.settings.ISettings"
+          field="contentTypes"
+          remove="True" />
+  <record interface="collective.altview.settings.ISettings"
+          field="path"
+          remove="True" />
+  <record interface="collective.altview.settings.ISettings"
+          field="views"
+          remove="True" />
+</registry>

@@ -1,0 +1,3 @@
+<registry>
+  <records interface="collective.altview.settings.ISettings" />
+</registry>
