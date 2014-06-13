@@ -31,7 +31,7 @@ setup(name='collective.altview',
       keywords='',
       author='',
       author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      url='http://gihub.com/collective/',
       license='gpl',
       packages=find_packages('src'),
       package_dir={'': 'src'},
@@ -40,6 +40,9 @@ setup(name='collective.altview',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'five.grok',
+          'plone.app.registry',
+
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},
