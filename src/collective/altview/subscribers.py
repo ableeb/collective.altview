@@ -17,6 +17,5 @@ def set_news_item_layout(obj, event):
             obj.setLayout(settings.views)
 
             # list of tuples of availble views for content type
-            # available_layouts = obj.getAvailableLayouts() 
+            # available_layouts = obj.getAvailableLayouts()
             # TODO: list registered views
-
