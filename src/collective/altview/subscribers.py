@@ -1,6 +1,5 @@
 from five import grok
 
-#from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectMovedEvent
 from Products.ATContentTypes.interfaces import IATNewsItem
 from zope.component import getUtility
