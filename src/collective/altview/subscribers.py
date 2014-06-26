@@ -10,12 +10,13 @@ from collective.altview.settings import ISettings
 @grok.subscribe(IATNewsItem, IObjectAddedEvent)
 def set_news_item_layout(obj, event):
     registry = getUtility(IRegistry)
-    settings = registry.forInterface(ISettings)
+    settings = registry.forInterface(ISettings, check=False)
 
-    if settings.path in event.newParent.absolute_url_path():
-        obj.setLayout(settings.views)
+    if settings.path is not None and settings.views is not None:
+        if settings.path in event.newParent.absolute_url_path():
+            obj.setLayout(settings.views)
 
-        # list of tuples of availble views for content type
-        # available_layouts = obj.getAvailableLayouts() 
-        # TODO: list registered views
+            # list of tuples of availble views for content type
+            # available_layouts = obj.getAvailableLayouts() 
+            # TODO: list registered views
 
