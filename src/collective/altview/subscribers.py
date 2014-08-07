@@ -30,7 +30,6 @@ def set_news_item_layout(obj, event):
     if settings.path is not None and settings.views is not None:
         # object moved into folder
         if settings.path in event.newParent.absolute_url_path():
-            annotations[KEY] = obj.defaultView()
             obj.setLayout(settings.views)
         else:
             previous_view = annotations.get(KEY, None)
