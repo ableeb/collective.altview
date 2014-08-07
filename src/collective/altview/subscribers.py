@@ -2,10 +2,20 @@ from five import grok
 from zope.annotation import IAnnotations
 from zope.annotation import IAttributeAnnotatable
 from zope.lifecycleevent.interfaces import IObjectMovedEvent
+from zope.lifecycleevent import IObjectCreatedEvent
+
 from Products.ATContentTypes.interfaces import IATNewsItem
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 from collective.altview.settings import ISettings
+
+
+@grok.subscribe(IATNewsItem, IObjectCreatedEvent)
+def store_default_view(obj, event):
+    KEY = 'collective.altview.previous_view'
+    assert IAttributeAnnotatable.providedBy(obj)
+    annotations = IAnnotations(obj)
+    annotations[KEY] = obj.defaultView()
 
 
 @grok.subscribe(IATNewsItem, IObjectMovedEvent)
