@@ -28,10 +28,12 @@ def set_news_item_layout(obj, event):
     annotations = IAnnotations(obj)
 
     if settings.path is not None and settings.views is not None:
-        # object moved into folder
-        if settings.path in event.newParent.absolute_url_path():
-            obj.setLayout(settings.views)
-        else:
-            previous_view = annotations.get(KEY, None)
-            if previous_view is not None:
-                obj.setLayout(previous_view)
+        # removed event does not have a newParent
+        if getattr(event, 'newParent', None) is not None:
+            # object moved into folder
+            if settings.path in event.newParent.absolute_url_path():
+                obj.setLayout(settings.views)
+            else:
+                previous_view = annotations.get(KEY, None)
+                if previous_view is not None:
+                    obj.setLayout(previous_view)
