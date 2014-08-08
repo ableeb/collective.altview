@@ -4,6 +4,14 @@
     i18n_domain="collective.altview">
 
     <gs:upgradeStep
+        title="Upgrade AltView to 0.4"
+        description="collective.altview upgrade step"
+        source="0.2"
+        destination="0.3"
+        handler=".upgrades.upgrade_to_0_3"
+        profile="collective.altview:default" />
+
+    <gs:upgradeStep
         title="Upgrade AltView 0.3"
         description="collective.altview upgrade step"
         source="0.2"

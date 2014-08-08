@@ -17,6 +17,13 @@ def upgrade(upgrade_product, version):
     return wrap_func
 
 
+@upgrade('collective.altview', '0.4')
+def upgrade_to_0_4(context):
+    portal_setup = getToolByName(context, 'portal_setup')
+    log.info("Upgraded to collective.altview %s" %
+             portal_setup.getVersionForProfile('collective.altview:default'))
+
+
 @upgrade('collective.altview', '0.3')
 def upgrade_to_0_3(context):
     portal_setup = getToolByName(context, 'portal_setup')
